@@ -22,6 +22,15 @@
       align-items: center;
       text-align: center;
     }
+    .social-links a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: #0b66c3;
+      font-weight: 500;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -29,11 +38,12 @@
     <div class="container header-content">
       <img src="profile.jpg" alt="Srinivasa Munnangi Profile Picture" class="profile-pic" />
       <h1>Srinivasa Munnangi</h1>
-      <p class="subtitle">
-        Principal Software Engineer • Cloud Platforms • Security • FinTech <br />
+      <p class="subtitle">Principal Software Engineer • Cloud Platforms • Security • FinTech</p>
+      <div class="social-links">
         <a href="https://www.linkedin.com/in/srinivasa-m-5819aba" target="_blank" rel="noopener">LinkedIn</a> • 
-        <a href="mailto:srinu.tdk@gmail.com">srinu.tdk@gmail.com</a>
-      </p>
+        <a href="mailto:srinu.tdk@gmail.com">Email</a> • 
+        <a href="https://github.com/SrinivasaRM" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
   </header>
 
@@ -55,86 +65,4 @@
     <section id="skills" class="card">
       <h2>Skills</h2>
       <p>
-        Java/J2EE • Groovy • Python • Spring Boot • React • Node.js • GraphQL • Microservices • Kubernetes • Docker • AWS (EC2, S3, EKS, MSK, Lambda, Route 53, CloudFront, CloudHSM) • Azure • PCF • Big Data Platforms • Kafka • Event-Driven Architecture • IAM (ForgeRock, Okta, Keycloak, PingFederate) • OAuth2 • SAML • JWT • CI/CD (GitLab, Jenkins, Maven) • Site Reliability Engineering • Security & Compliance (PCI DSS, SOC, DevSecOps, CNAPP) • Monitoring (AppDynamics, Splunk, Dynatrace, Prometheus, Grafana).
-      </p>
-    </section>
-
-    <section id="experience" class="card">
-      <h2>Experience</h2>
-
-      <article>
-        <h3>Principal Software Engineer — Product Security, Cloud Platforms & SaaS Integrations</h3>
-        <p class="meta">Mastercard Priceless Platform • San Francisco, CA</p>
-        <ul>
-          <li>Led modernization and migration of legacy on-prem infrastructure to AWS cloud.</li>
-          <li>Built event-driven microservices using Java, React, Node, GraphQL, and Apollo.</li>
-          <li>Implemented IAM solutions with ForgeRock; unified SSO with SAML/JWT.</li>
-          <li>Established DevSecOps practices with GitLab, GitGuardian, Nexus IQ, and shift-left security.</li>
-          <li>Provisioned cloud networking, multi-tenant Kafka (Strimzi → AWS MSK), Astra DB, and AWS services (EKS, Lambda, CloudFront, WAF, CloudHSM).</li>
-          <li>Integrated observability with OpenTelemetry, AppDynamics, Grafana, Prometheus.</li>
-          <li>Implemented SOC compliance, risk management, bug bounty programs, and incident response.</li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Principal Software Engineer — Cloud Native & Big Data Platforms</h3>
-        <p class="meta">Mastercard Customer Data Management Services • St. Louis, MO</p>
-        <ul>
-          <li>Built Customer Data APIs with event-driven microservices and Kafka.</li>
-          <li>Developed Spark Streaming apps for real-time customer data processing.</li>
-          <li>Automated CI/CD pipelines and blue-green deployments with zero downtime.</li>
-          <li>Integrated APIs into Mastercard’s Cloud Native framework (Spring Cloud, Service Discovery, dynamic routing).</li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Solution Architect / Software Engineer</h3>
-        <p class="meta">Mastercard Global Processing Solutions • O’Fallon, MO</p>
-        <ul>
-          <li>Migrated enterprise web architecture from WebLogic to JBoss and toward cloud native.</li>
-          <li>Introduced SPA frameworks (Angular, React, Node) and Spring Boot microservices.</li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Lead Software Engineer (Java/J2EE)</h3>
-        <p class="meta">Mastercard Payment Transaction Services • O’Fallon, MO</p>
-        <ul>
-          <li>Led development and scaling of enterprise web apps, SOA, and IVR platforms.</li>
-          <li>Implemented secure web services, IAM, and performance monitoring (Splunk, Dynatrace).</li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Java/J2EE Consultant</h3>
-        <p class="meta">Travelex Prepaid Management Services • London, UK</p>
-      </article>
-
-      <article>
-        <h3>Java Software Engineer</h3>
-        <p class="meta">Auropro Systems • Plainsboro, NJ</p>
-      </article>
-
-      <article>
-        <h3>Member Technical Staff</h3>
-        <p class="meta">HCL Technologies • Noida, India</p>
-      </article>
-    </section>
-
-    <section id="education" class="card">
-      <h2>Education</h2>
-      <p><strong>Master of Science (M.S.) in Computer Applications</strong><br />Bharathidasan University, Tamil Nadu, India</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Srinivasa Munnangi — Built with ❤️ on GitHub Pages</small>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+        Java/J2EE • Groovy • Python • Spring Boot • React • Node.js • GraphQL • Microservices
