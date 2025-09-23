@@ -1,268 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Srinivasa Munnangi — Principal Software Engineer</title>
-  <meta name="description" content="Portfolio and resume site for Srinivasa Munnangi — Principal Software Engineer specializing in Cloud, Security, and FinTech." />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #f6f7fb;
-      margin: 0;
-    }
-    .profile-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
-    }
-    .header-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .social-links a {
-      margin: 0 0.5rem;
-      text-decoration: none;
-      color: #0b66c3;
-      font-weight: 500;
-    }
-    .social-links a:hover { text-decoration: underline; }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    }
-    h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      color: #0b66c3;
-    }
-    .experience article {
-      margin-bottom: 1.5rem;
-    }
-    .experience h3 {
-      margin: 0.25rem 0;
-      color: #333;
-    }
-    .meta {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-    summary {
-      cursor: pointer;
-      font-weight: 600;
-      color: #0b66c3;
-      margin-bottom: 0.5rem;
-    }
-    details ul {
-      margin-top: 0.5rem;
-    }
-    .repo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-    .repo-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
-    }
-    .repo-card:hover { transform: translateY(-3px); }
-    .repo-card h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
-    .repo-card p { font-size: 0.95rem; color: #444; }
-    .repo-meta { margin-top: 0.5rem; font-size: 0.85rem; color: #666; }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinivas ARM | Engineering Blog</title>
+    <style>
+        /* --- General Styling --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            color: #6c757d;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e9ecef;
+            margin: 40px 0;
+        }
+
+        /* --- Typography & Content --- */
+        article h2 {
+            font-size: 2em;
+            color: #0056b3;
+        }
+        
+        article h3 {
+            font-size: 1.5em;
+            margin-top: 40px;
+            border-left: 4px solid #0056b3;
+            padding-left: 15px;
+        }
+
+        p, li {
+            font-size: 1.1em;
+            color: #343a40;
+        }
+
+        strong {
+            color: #000;
+        }
+        
+        .meta-data {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #dee2e6;
+        }
+        
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-content">
-      <img src="profile.jpg" alt="Srinivasa Munnangi Profile Picture" class="profile-pic" />
-      <h1>Srinivasa Munnangi</h1>
-      <p class="subtitle">Principal Software Engineer • Cloud Platforms • Security • FinTech</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/srinivasa-m-5819aba" target="_blank">LinkedIn</a> • 
-        <a href="mailto:srinu.tdk@gmail.com">Email</a> • 
-        <a href="https://github.com/SrinivasaRM" target="_blank">GitHub</a>
-      </div>
+
+    <div class="container">
+        <header>
+            <h1>Srinivas ARM</h1>
+            <p>An Engineering Blog on Cloud, AI, and Search</p>
+        </header>
+
+        <main>
+            <article>
+                <h2>Building an Advanced Semantic Search Engine with AWS OpenSearch and Bedrock</h2>
+                <p class="meta-data">By Srinivas ARM | Published on September 22, 2025</p>
+
+                <p>In the world of information retrieval, user expectations have evolved. Simply matching keywords is no longer enough. Modern search systems must understand the <strong>intent</strong> and <strong>semantic meaning</strong> behind a user's query to deliver truly relevant results. This post details the architecture for a state-of-the-art semantic search engine built on AWS, leveraging the power of vector search in OpenSearch and the intelligence of foundation models via Amazon Bedrock.</p>
+
+                <h3>The High-Level Architecture</h3>
+                <p>The entire process can be divided into two core pipelines: an offline <strong>Content Ingestion Pipeline</strong> that prepares your data, and a real-time <strong>Search Query Pipeline</strong> that serves live user requests.</p>
+                
+                <img src="semantic-search-architecture.png" alt="Architecture diagram for an advanced semantic search system on AWS">
+
+                <hr>
+
+                <h3>Part 1: Content Ingestion Pipeline (The Offline Preparation)</h3>
+                <ol>
+                    <li><strong>Data Sources</strong>: Content originates from a primary <strong>Content Database</strong> (like Amazon RDS) and an <strong>AWS S3</strong> bucket, which can act as a "Content Lake" for unstructured data.</li>
+                    <li><strong>Data Processing & Chunking</strong>: When new content is added, an <strong>AWS Lambda</strong> or <strong>AWS Fargate</strong> service is triggered. A critical first step is "chunking," where large documents are broken down into smaller, semantically coherent pieces.</li>
+                    <li><strong>Vectorization (Creating Embeddings)</strong>: The service takes each chunk and calls the <strong>Cohere Embedding Model</strong> via <strong>AWS Bedrock</strong>. This converts the text into a numerical vector (an "embedding") that represents its meaning.</li>
+                    <li><strong>Data Indexing</strong>: The data is stored in <strong>AWS OpenSearch</strong>, which uses two types of indexes:
+                        <ul>
+                            <li><strong>Vector Store (k-NN Index)</strong>: Stores the vector embeddings for fast similarity searches.</li>
+                            <li><strong>Standard Search Index</strong>: Stores the original text and metadata for keyword filtering.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Part 2: Real-Time Search Query Pipeline (The User Interaction)</h3>
+                <ol>
+                    <li><strong>User Enters Query</strong>: A user types a natural language query like <em>"unique culinary experiences for a date night in New York."</em></li>
+                    <li><strong>API Gateway & Query Vectorization</strong>: The request hits an <strong>AWS API Gateway</strong>, which triggers a Lambda function to convert the user's query into a vector using the same Cohere model.</li>
+                    <li><strong>Initial Retrieval (Hybrid Search)</strong>: OpenSearch performs a "hybrid" search by combining the results from a <strong>k-NN vector search</strong> and a traditional keyword search to get the best of both worlds.</li>
+                    <li><strong>Reranking for Precision</strong>: This is the secret sauce. The top results from the initial search are sent to the <strong>Cohere Rerank Model</strong> via Bedrock. This specialized model intelligently re-orders the list for maximum relevance to the user's specific query.</li>
+                    <li><strong>Return Final Results</strong>: The newly reranked and sorted list of results is sent back to the user's interface.</li>
+                </ol>
+                
+            </article>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Srinivas ARM. All rights reserved.</p>
+        </footer>
     </div>
-  </header>
 
-  <main class="container">
-    <section id="about" class="card">
-      <h2>Professional Summary</h2>
-      <p>Srini has over 18 years of professional experience delivering technical solutions within healthcare, e-commerce,
-      financial services, and core payment processing. Skilled in distributed applications, containerized cloud-native
-      microservices, and real-time data streaming to payment platforms. Strong background in digital transformation,
-      DevSecOps, CI/CD automation, and cloud platform architecture (AWS, Azure, PCF).</p>
-    </section>
-
-    <section id="skills" class="card">
-      <h2>Skills</h2>
-      <p>
-        Java/J2EE • Groovy • Python • Spring Boot • React • Node.js • GraphQL • Microservices • Kubernetes • Docker • AWS (EC2, S3, EKS, MSK, Lambda, Route 53, CloudFront, CloudHSM) • Azure • PCF • Big Data • Kafka • Event-Driven Architecture • IAM (ForgeRock, Okta, Keycloak, PingFederate) • OAuth2 • SAML • JWT • CI/CD (GitLab, Jenkins, Maven) • Site Reliability Engineering • Security & Compliance (PCI DSS, SOC, DevSecOps, CNAPP) • Monitoring (AppDynamics, Splunk, Dynatrace, Prometheus, Grafana).
-      </p>
-    </section>
-
-    <section id="experience" class="card experience">
-      <h2>Experience</h2>
-
-      <article>
-        <h3>Principal Software Engineer — Product Security, Cloud Platforms & SaaS Integrations</h3>
-        <p class="meta">Mastercard Priceless Platform • San Francisco, CA</p>
-        <details>
-          <summary>View responsibilities</summary>
-          <ul>
-            <li>Led platform modernization and migration from on-prem to AWS cloud.</li>
-            <li>Built event-driven architecture using Java, React, Node, TypeScript, GraphQL.</li>
-            <li>Provisioned AWS MSK, EKS, Astra DB, CloudHSM, CloudFront, WAF, IAM.</li>
-            <li>Implemented IAM with ForgeRock, SAML/JWT SSO, and JIT user provisioning.</li>
-            <li>Established DevSecOps practices with GitLab, GitGuardian, Nexus IQ.</li>
-            <li>Integrated observability (AppDynamics, Grafana, Prometheus, OpenTelemetry).</li>
-            <li>Implemented SOC compliance, bug bounty, and incident response frameworks.</li>
-            <li>Applied chaos engineering and resiliency testing with AWS FIS.</li>
-          </ul>
-        </details>
-      </article>
-
-      <article>
-        <h3>Principal Software Engineer — Cloud Native & Big Data Platforms</h3>
-        <p class="meta">Mastercard Customer Data Management Services • St. Louis, MO</p>
-        <details>
-          <summary>View responsibilities</summary>
-          <ul>
-            <li>Led Customer Data API development on Kafka-based microservices.</li>
-            <li>Built Spark Streaming apps for real-time processing.</li>
-            <li>Automated CI/CD with Jenkins, blue-green deployments with zero downtime.</li>
-            <li>Integrated APIs with Mastercard’s cloud-native framework (Spring Cloud, Service Discovery).</li>
-            <li>Implemented distributed tracing, SLA dashboards in Splunk and Dynatrace.</li>
-          </ul>
-        </details>
-      </article>
-
-      <article>
-        <h3>Solution Architect / Software Engineer</h3>
-        <p class="meta">Mastercard Global Processing Solutions • O’Fallon, MO</p>
-        <details>
-          <summary>View responsibilities</summary>
-          <ul>
-            <li>Migrated enterprise web architecture from WebLogic to JBoss and toward cloud native.</li>
-            <li>Introduced Angular, React, Node, and Spring Boot microservices.</li>
-            <li>Enforced 12-factor app design and TOGAF best practices.</li>
-          </ul>
-        </details>
-      </article>
-
-      <article>
-        <h3>Lead Software Engineer (Java/J2EE)</h3>
-        <p class="meta">Mastercard Payment Transaction Services • O’Fallon, MO</p>
-        <details>
-          <summary>View responsibilities</summary>
-          <ul>
-            <li>Led development of enterprise apps, SOA, and IVR platforms.</li>
-            <li>Implemented SSO, IAM, secure web services (SAML, PKI).</li>
-            <li>Optimized infrastructure with load balancers, Splunk, Dynatrace.</li>
-          </ul>
-        </details>
-      </article>
-
-      <article>
-        <h3>Java/J2EE Consultant</h3>
-        <p class="meta">Travelex Prepaid Management Services • London, UK</p>
-        <details>
-          <summary>View responsibilities</summary>
-          <ul>
-            <li>Developed card management functions with Java, Spring, Hibernate.</li>
-            <li>Maintained high code quality with reviews, tests, and CI pipelines.</li>
-          </ul>
-        </details>
-      </article>
-
-      <article>
-        <h3>Java Software Engineer</h3>
-        <p class="meta">Auropro Systems • Plainsboro, NJ</p>
-        <details>
-          <summary>View responsibilities</summary>
-          <ul>
-            <li>Built APIs for user provisioning and authentication (2FA, SSO).</li>
-            <li>Worked with Tivoli Access Manager, LDAP, and Active Directory.</li>
-          </ul>
-        </details>
-      </article>
-
-      <article>
-        <h3>Member Technical Staff</h3>
-        <p class="meta">HCL Technologies • Noida, India</p>
-        <details>
-          <summary>View responsibilities</summary>
-          <ul>
-            <li>Built and managed web applications using Java/J2EE and Struts.</li>
-          </ul>
-        </details>
-      </article>
-    </section>
-
-    <section id="projects" class="card">
-      <h2>GitHub Projects</h2>
-      <div class="repo-grid" id="repo-grid">
-        <p>Loading repositories...</p>
-      </div>
-    </section>
-
-    <section id="education" class="card">
-      <h2>Education</h2>
-      <p><strong>Master of Science (M.S.) in Computer Applications</strong><br />Bharathidasan University, Tamil Nadu, India</p>
-    </section>
-  </main>
-
-  <footer>
-    <small>© <span id="year"></span> Srinivasa Munnangi — Built with ❤️ on GitHub Pages</small>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Fetch GitHub repos dynamically
-    async function loadRepos() {
-      const grid = document.getElementById('repo-grid');
-      grid.innerHTML = "";
-      try {
-        const response = await fetch("https://api.github.com/users/SrinivasaRM/repos?sort=updated&per_page=6");
-        const repos = await response.json();
-        repos.forEach(repo => {
-          const card = document.createElement("div");
-          card.className = "repo-card";
-          card.innerHTML = `
-            <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-            <p>${repo.description ? repo.description : "No description provided."}</p>
-            <div class="repo-meta">⭐ ${repo.stargazers_count} • Updated ${new Date(repo.updated_at).toLocaleDateString()}</div>
-          `;
-          grid.appendChild(card);
-        });
-      } catch (err) {
-        grid.innerHTML = "<p>Unable to load repositories right now.</p>";
-      }
-    }
-    loadRepos();
-  </script>
 </body>
 </html>
