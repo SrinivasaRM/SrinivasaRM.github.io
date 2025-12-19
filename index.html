@@ -152,7 +152,31 @@
     <div class="ambient-bg" id="bg"></div>
 
     <nav>
-        <div class="profile-img">SM</div>
+<div class="profile-container">
+    <img src="profile.jpg" alt="Srinivasa Munnangi" class="profile-img-enhanced">
+</div>
+
+<style>
+    .profile-container {
+        margin-bottom: 1.5rem;
+    }
+    
+    .profile-img-enhanced {
+        width: 100px;
+        height: 100px;
+        border-radius: 24px; /* Matches the card radius style */
+        object-fit: cover;
+        border: 2px solid var(--accent);
+        padding: 4px;
+        background: var(--card-bg);
+        box-shadow: 0 0 20px var(--accent-glow);
+        transition: transform 0.3s ease;
+    }
+
+    .profile-img-enhanced:hover {
+        transform: scale(1.05) rotate(2deg);
+    }
+</style>
         <h1>Srinivasa Munnangi</h1>
         <p>Principal Software Engineer</p>
         
