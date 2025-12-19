@@ -10,8 +10,9 @@
     <style>
         :root {
             --accent: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.3);
+            --accent-glow: rgba(99, 102, 241, 0.4);
             --bg: #030712;
+            --sidebar-bg: rgba(3, 7, 18, 0.95);
             --card-bg: rgba(17, 24, 39, 0.7);
             --text-main: #f3f4f6;
             --text-dim: #9ca3af;
@@ -28,6 +29,7 @@
             line-height: 1.6;
         }
 
+        /* Interactive Background */
         .ambient-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -35,6 +37,7 @@
             z-index: -1;
         }
 
+        /* Sidebar Navigation */
         nav {
             width: 320px;
             height: 100vh;
@@ -43,93 +46,115 @@
             display: flex;
             flex-direction: column;
             border-right: 1px solid var(--border);
-            background: rgba(3, 7, 18, 0.9);
-            backdrop-filter: blur(10px);
-            overflow-y: auto;
+            background: var(--sidebar-bg);
+            backdrop-filter: blur(12px);
+            z-index: 100;
         }
 
-        /* Passport Size Profile Styling */
-        .profile-container {
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: flex-start;
+        /* ELEGANT PROFILE PICTURE STYLING */
+        .profile-wrapper {
+            position: relative;
+            margin-bottom: 2.5rem;
+            width: 160px; /* Slightly wider for elegance */
+            height: 210px; /* Golden ratio portrait */
         }
-        
-        .passport-photo {
-            width: 132px;
-            height: 170px;
+
+        .profile-glow {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--accent);
+            filter: blur(30px);
+            opacity: 0.2;
+            border-radius: 16px;
+            animation: pulse 4s infinite alternate;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: var(--card-bg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            perspective: 1000px;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 4px;
-            border: 3px solid #ffffff;
-            outline: 1px solid var(--border);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(135deg, var(--accent), #a855f7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: white;
+            transition: transform 0.5s ease;
         }
 
-        nav h1 { font-size: 1.4rem; font-weight: 800; margin-top: 1rem; }
-        nav p { font-size: 0.8rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        /* Modern Hover Effects */
+        .profile-wrapper:hover .profile-img-container {
+            transform: translateY(-8px) rotateY(-5deg) rotateX(5deg);
+            border-color: var(--accent);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 20px var(--accent-glow);
+        }
 
-        .nav-links { margin-top: 2rem; list-style: none; }
-        .nav-links li { margin-bottom: 0.8rem; }
+        .profile-wrapper:hover img {
+            transform: scale(1.08);
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.1; transform: scale(0.95); }
+            100% { opacity: 0.3; transform: scale(1.05); }
+        }
+
+        nav h1 { font-size: 1.4rem; font-weight: 800; margin-top: 1rem; color: #fff; }
+        nav p.job-title { font-size: 0.8rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+
+        .nav-links { margin-top: 2rem; list-style: none; flex-grow: 1; }
+        .nav-links li { margin-bottom: 1rem; }
         .nav-links a {
             text-decoration: none;
             color: var(--text-dim);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 500;
             transition: 0.3s;
+            display: block;
         }
-        .nav-links a:hover { color: var(--text-main); }
+        .nav-links a:hover { color: var(--accent); transform: translateX(5px); }
 
-        main { margin-left: 320px; padding: 4rem 8%; width: 100%; }
-
-        section { margin-bottom: 5rem; }
+        /* Main Content */
+        main { margin-left: 320px; padding: 4rem 8%; width: calc(100% - 320px); }
 
         .glass-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 2.5rem;
             backdrop-filter: blur(16px);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .exp-item {
             position: relative;
-            padding-left: 25px;
+            padding-left: 30px;
             border-left: 1px solid var(--border);
-            padding-bottom: 2.5rem;
+            padding-bottom: 3rem;
         }
         .exp-item::before {
             content: '';
-            position: absolute; left: -5px; top: 5px;
+            position: absolute; left: -5px; top: 8px;
             width: 9px; height: 9px; background: var(--accent); border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
         }
 
-        .exp-date { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--accent); }
-        .exp-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
-        .exp-company { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 0.8rem; }
-
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-        .skill-tag {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-family: 'JetBrains Mono';
-            margin: 2px;
-            display: inline-block;
-        }
+        .exp-date { font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent); }
+        .exp-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin: 0.3rem 0; }
+        .exp-company { font-size: 1rem; color: var(--text-dim); margin-bottom: 1rem; font-weight: 600; }
 
         @media (max-width: 900px) {
             nav { width: 100%; height: auto; position: relative; border-right: none; }
-            main { margin-left: 0; padding: 2rem; }
+            main { margin-left: 0; padding: 2rem; width: 100%; }
             body { flex-direction: column; }
+            .profile-wrapper { margin: 0 auto 2rem; }
+            nav h1, nav p { text-align: center; }
         }
     </style>
 </head>
@@ -137,100 +162,86 @@
     <div class="ambient-bg" id="bg"></div>
 
     <nav>
-        <div class="profile-container">
-            <div class="passport-photo">SM</div>
+        <div class="profile-wrapper">
+            <div class="profile-glow"></div>
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Srinivasa Munnangi">
+            </div>
         </div>
+
         <h1>Srinivasa Munnangi</h1>
-        <p>Principal Software Engineer</p>
-        <p style="text-transform: none; color: var(--text-dim); margin-top: 5px;"><i class="fas fa-location-dot"></i> San Francisco, CA</p>
+        <p class="job-title">Principal Software Engineer</p>
         
         <ul class="nav-links">
-            <li><a href="#about">01. Professional Summary</a></li>
-            <li><a href="#experience">02. Experience</a></li>
-            <li><a href="#skills">03. Technical Stack</a></li>
-            <li><a href="#education">04. Education</a></li>
+            <li><a href="#about">Summary</a></li>
+            <li><a href="#experience">Professional Journey</a></li>
+            <li><a href="#skills">Tech Stack</a></li>
+            <li><a href="#education">Education</a></li>
         </ul>
 
-        <div style="margin-top: 2rem; display: flex; gap: 15px;">
+        <div style="display: flex; gap: 20px; font-size: 1.2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
             <a href="mailto:srinu.tdk@gmail.com" style="color: var(--text-dim);"><i class="fas fa-envelope"></i></a>
             <a href="https://github.com/SrinivasaRM" style="color: var(--text-dim);"><i class="fab fa-github"></i></a>
+            <a href="#" style="color: var(--text-dim);"><i class="fab fa-linkedin"></i></a>
         </div>
     </nav>
 
     <main>
         <section id="about">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Professional Summary</h2>
+            <h2 style="font-size: 3rem; margin-bottom: 1.5rem; font-weight: 800;">Building Scalable <span style="color: var(--accent);">Cloud Platforms.</span></h2>
             <div class="glass-card">
-                <p>Over 18 years of experience delivering technical solutions within healthcare, e-commerce, financial services, and core payment processing domains. Specialist in building distributed applications, containerized microservices, and real-time data streaming platforms.</p>
-                <p style="margin-top: 1rem;">Currently driving the modernization of a 14-year-old enterprise platform at Mastercard, transitioning to decentralized, resilient architectural patterns and DevSecOps excellence.</p>
+                <p>Srini has over 18 years of professional experience delivering technical solutions within the healthcare, e-commerce, financial services and core payment processing domains[cite: 7]. Specialist in building distributed applications, containerized cloud-enabled microservices, and streaming real-time data[cite: 8].</p>
+                <p style="margin-top: 1.2rem;">Currently, he is focused on decomposing and decentralizing enterprise platforms using modern architectural patterns and driving operational stability across hybrid infrastructures at Mastercard[cite: 10].</p>
             </div>
         </section>
 
         <section id="experience">
-            <h2 style="margin-bottom: 2rem;">Work Experience</h2>
+            <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Experience</h3>
             
             <div class="exp-item">
-                <span class="exp-date">2022 — PRESENT</span>
-                <div class="exp-title">Principal Software Engineer</div>
-                <div class="exp-company">MasterCard Priceless Platform | San Francisco, CA</div>
-                <ul style="margin-left: 1.2rem; color: var(--text-dim); font-size: 0.9rem;">
-                    <li>Leading platform modernization with cloud-native event-driven architecture using AWS EKS and Kafka.</li>
-                    <li>Implementing Zero Trust security practices and DevSecOps pipelines with GitLab and GitGuardian.</li>
-                    <li>Architecting multi-region CloudHSM and KMS solutions for PCI/PII data protection.</li>
-                </ul>
+                <span class="exp-date">JUNE 2022 — PRESENT</span>
+                <div class="exp-title">Principal Software Engineer (Product Security & Cloud)</div>
+                <div class="exp-company">MasterCard Priceless Platform [cite: 31, 32]</div>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Leading modernization efforts using cloud-native event-driven architecture with Java, React, Node, and GraphQL[cite: 33, 34, 35]. Architecting AWS EKS, Kafka (MSK), and Envoy-based API Gateways for multi-cloud workloads[cite: 36].</p>
             </div>
 
             <div class="exp-item">
-                <span class="exp-date">2018 — 2022</span>
-                <div class="exp-title">Principal Software Engineer</div>
-                <div class="exp-company">MasterCard Customer Data Management | St. Louis, MO</div>
-                <ul style="margin-left: 1.2rem; color: var(--text-dim); font-size: 0.9rem;">
-                    <li>Built the first version of Customer Data APIs in a cloud-native event-driven fashion.</li>
-                    <li>Developed Spark Streaming applications and enterprise data pipelines for Single View of Customer.</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <span class="exp-date">2016 — 2018</span>
-                <div class="exp-title">Solution Architect</div>
-                <div class="exp-company">MasterCard Global Processing Solutions</div>
-                <ul style="margin-left: 1.2rem; color: var(--text-dim); font-size: 0.9rem;">
-                    <li>Enforced 12-Factor application development practices and TOGAF standards.</li>
-                    <li>Migrated large enterprise web architectures into modern single-page applications (React/Node).</li>
-                </ul>
+                <span class="exp-date">APRIL 2018 — MAY 2022</span>
+                <div class="exp-title">Principal Software Engineer (Big Data Platforms)</div>
+                <div class="exp-company">MasterCard Customer Data Management [cite: 88]</div>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Successfully built Customer Data APIs in cloud-native event-driven styles using Spark Streaming and Kafka[cite: 90, 91].</p>
             </div>
         </section>
 
         <section id="skills">
-            <h2 style="margin-bottom: 2rem;">Technical Stack</h2>
-            <div class="glass-card">
-                <div class="skills-grid">
-                    <div>
-                        <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Backend & Data</h4>
-                        <span class="skill-tag">Java/J2EE</span> <span class="skill-tag">Spring Boot</span>
-                        <span class="skill-tag">Python</span> <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">Kafka</span> <span class="skill-tag">Spark</span>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Cloud & Security</h4>
-                        <span class="skill-tag">AWS</span> <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">ForgeRock IAM</span> <span class="skill-tag">SAML/JWT</span>
-                        <span class="skill-tag">DevSecOps</span> <span class="skill-tag">Docker</span>
-                    </div>
+            <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Expertise</h3>
+            <div class="glass-card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem;">
+                <div>
+                    <h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">CLOUD</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">AWS EKS/MSK, Kubernetes, Docker, Terraform[cite: 36, 46, 67, 68].</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">SECURITY</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">ForgeRock IAM, OAuth2, JWT, Zero Trust, DevSecOps[cite: 20, 24, 38, 42].</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">BACKEND</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">Java/J2EE, Spring Boot, Node.js, GraphQL, Python[cite: 13, 15, 35, 74].</p>
                 </div>
             </div>
         </section>
 
         <section id="education">
-            <h2 style="margin-bottom: 2rem;">Education</h2>
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Education</h3>
             <div class="glass-card">
                 <div class="exp-title">Master of Science (M.S.) in Computer Applications</div>
-                <div class="exp-company">Bharathidasan University, Tamil Nadu, India</div>
+                <div class="exp-company">Bharathidasan University, India [cite: 153, 154]</div>
             </div>
         </section>
     </main>
 
     <script>
+        // Interactive Mouse Background
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
