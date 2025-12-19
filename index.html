@@ -1,231 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Srinivasa Munnangi | Strategic Technical Leader</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<section id="technical">
+    <div class="section-header">
+        <h2>Technical Arsenal</h2>
+        <p>A Comprehensive <span>Strategic Stack</span></p>
+    </div>
     
-    <style>
-        :root {
-            --accent: #818cf8;
-            --bg: #020617;
-            --sidebar-bg: rgba(2, 6, 23, 0.98);
-            --card-bg: rgba(30, 41, 59, 0.4);
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            display: flex;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        .ambient-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #1e1b4b 0%, #020617 60%);
-            z-index: -1;
-        }
-
-        /* Navigation Styles */
-        nav {
-            width: 340px; height: 100vh; position: fixed; padding: 4rem 2.5rem;
-            display: flex; flex-direction: column; border-right: 1px solid var(--border);
-            background: var(--sidebar-bg); backdrop-filter: blur(15px); z-index: 100;
-        }
-
-        .mobile-header {
-            display: none;
-            position: fixed;
-            top: 0; width: 100%;
-            background: var(--sidebar-bg);
-            backdrop-filter: blur(15px);
-            padding: 1rem 1.5rem;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .profile-wrapper { position: relative; margin-bottom: 2rem; width: 170px; height: 220px; }
-        .profile-img-container {
-            width: 100%; height: 100%; border-radius: 4px; overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
-        }
-        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
-
-        nav h1 { font-size: 1.5rem; font-weight: 800; margin-top: 1rem; }
-        nav p.job-title { font-size: 0.8rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
-
-        .nav-links { list-style: none; margin-top: 2rem; flex-grow: 1; }
-        .nav-links li { margin-bottom: 1rem; }
-        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
-        .nav-links a:hover { color: #fff; transform: translateX(5px); display: inline-block; }
-
-        .social-links { margin-top: auto; display: flex; gap: 20px; }
-        .social-links a { color: var(--text-dim); font-size: 1.2rem; transition: 0.3s; }
-        .social-links a:hover { color: var(--accent); }
-
-        main { margin-left: 340px; padding: 6rem 10%; width: calc(100% - 340px); }
-
-        /* Content Sections */
-        .section-header { margin-bottom: 3rem; }
-        .section-header h2 { font-size: 0.8rem; text-transform: uppercase; color: var(--accent); letter-spacing: 3px; margin-bottom: 0.5rem; }
-        .section-header p { font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1.2; }
-        .section-header p span { color: var(--accent); }
-
-        .glass-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; margin-bottom: 2.5rem; }
-
-        .exp-item { margin-bottom: 3rem; border-left: 2px solid var(--border); padding-left: 1.5rem; }
-        .exp-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-        .exp-meta { font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent); display: block; margin-bottom: 0.8rem; text-transform: uppercase; }
-        .exp-list { list-style: none; color: var(--text-dim); font-size: 0.95rem; }
-        .exp-list li { margin-bottom: 0.6rem; position: relative; padding-left: 1.2rem; }
-        .exp-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 1024px) {
-            nav { transform: translateX(-100%); transition: transform 0.4s ease; width: 280px; }
-            nav.active { transform: translateX(0); }
-            .mobile-header { display: flex; }
-            main { margin-left: 0; padding: 7rem 1.5rem 2rem; width: 100%; }
-            .section-header p { font-size: 1.8rem; }
-            .mobile-profile-hero { display: block; width: 140px; height: 140px; border-radius: 50%; margin: 0 auto 2rem; border: 2px solid var(--accent); overflow: hidden; box-shadow: 0 0 20px var(--accent); }
-            .mobile-profile-hero img { width: 100%; height: 100%; object-fit: cover; }
-        }
-
-        @media (min-width: 1025px) { .mobile-profile-hero { display: none; } }
-    </style>
-</head>
-<body>
-    <div class="ambient-bg" id="bg"></div>
-
-    <header class="mobile-header">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="profile.jpg" alt="Profile" style="width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--accent);">
-            <span style="font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;">SRINIVASA M.</span>
+    <div class="tech-grid">
+        <div class="tech-category glass-card">
+            <div class="tech-icon"><i class="fas fa-cloud"></i></div>
+            <h4>Cloud & Infrastructure</h4>
+            <ul class="tech-list">
+                <li>AWS (EKS, MSK, Lambda, S3, EC2) [cite: 36, 47, 48, 68]</li>
+                <li>Kubernetes & Docker Containerization [cite: 26, 27, 36]</li>
+                <li>Service Mesh (Envoy, Gloo Edge) [cite: 36]</li>
+                <li>Infrastructure as Code (Terraform, CDK) [cite: 67]</li>
+            </ul>
         </div>
-        <button onclick="toggleMenu()" style="background:none; border:none; color:white; font-size: 1.5rem;"><i class="fas fa-bars"></i></button>
-    </header>
 
-    <nav id="sidebar">
-        <div class="profile-wrapper">
-            <div class="profile-img-container"><img src="profile.jpg" alt="Srinivasa Munnangi"></div>
+        <div class="tech-category glass-card">
+            <div class="tech-icon"><i class="fas fa-shield-alt"></i></div>
+            <h4>Security & Identity</h4>
+            <ul class="tech-list">
+                <li>ForgeRock Identity Platform (AM, IDM, DS, IG) [cite: 20, 38]</li>
+                <li>Public Key Infrastructure (PKI) & HSM [cite: 19, 20, 53, 60]</li>
+                <li>Zero Trust & DevSecOps [cite: 9, 41, 42, 75]</li>
+                <li>SAML, OAuth2, JWT, & FSSO [cite: 23, 24, 40]</li>
+            </ul>
         </div>
-        <h1>Srinivasa Munnangi</h1>
-        <p class="job-title">Principal Software Engineer</p>
-        <ul class="nav-links">
-            <li><a href="#vision" onclick="toggleMenu()">Executive Vision</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#foundation" onclick="toggleMenu()">Strategic Foundation</a></li>
-            <li><a href="#technical" onclick="toggleMenu()">Technical Arsenal</a></li>
-        </ul>
-        <div class="social-links">
-            <a href="mailto:srinu.tdk@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/SrinivasaRM"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/srinivasa-r-m-5819aba"><i class="fab fa-linkedin"></i></a>
+
+        <div class="tech-category glass-card">
+            <div class="tech-icon"><i class="fas fa-database"></i></div>
+            <h4>Backend & Data Systems</h4>
+            <ul class="tech-list">
+                <li>Java/J2EE, Spring Boot, & Node.js [cite: 13, 15, 35, 113]</li>
+                <li>Apache Kafka & Spark Streaming [cite: 36, 90, 91]</li>
+                <li>GraphQL & Apollo Server [cite: 35]</li>
+                <li>Managed DBs (Astra, AWS Keyspaces) [cite: 45, 69]</li>
+            </ul>
         </div>
-    </nav>
 
-    <main>
-        <section id="vision">
-            <div class="mobile-profile-hero"><img src="profile.jpg" alt="Srinivasa Munnangi"></div>
-            <div class="section-header">
-                <h2>Strategic Stewardship</h2>
-                <p>Engineering for <span>Sustainable Growth</span></p>
-            </div>
-            <div class="glass-card">
-                <p>Strategic Technical Leader with 18+ years of experience delivering high-availability solutions in healthcare, e-commerce, and financial services[cite: 7]. Specialist in orchestrating the evolution of legacy architectures into resilient, cloud-native environments[cite: 10].</p>
-            </div>
-        </section>
+        <div class="tech-category glass-card">
+            <div class="tech-icon"><i class="fas fa-tools"></i></div>
+            <h4>SRE & DevOps</h4>
+            <ul class="tech-list">
+                <li>CI/CD (GitLab, Jenkins, Bamboo) [cite: 9, 41, 94, 138]</li>
+                <li>Monitoring (Splunk, Dynatrace, Grafana) [cite: 43, 59, 101, 126]</li>
+                <li>Chaos Engineering (AWS FIS) [cite: 64, 73]</li>
+                <li>SLA/SLO Dashboards & Site Reliability [cite: 28, 100, 101]</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-        <section id="experience">
-            <div class="section-header"><h2>Professional Journey</h2><p>Legacy of <span>Impact</span></p></div>
-            
-            <div class="exp-item">
-                <span class="exp-meta">Mastercard • 2022 — Present</span>
-                <h3 class="exp-title">Principal Software Engineer (Security & Cloud)</h3>
-                <ul class="exp-list">
-                    <li>Leading platform modernization via cloud-native event-driven architecture using AWS EKS[cite: 34, 36].</li>
-                    <li>Implemented IAM solutions using ForgeRock Identity Platform and user provisioning APIs[cite: 38, 39].</li>
-                    <li>Designed multi-region AWS CloudHSM infrastructure to meet enterprise security compliance[cite: 53].</li>
-                </ul>
-            </div>
+<style>
+    /* New Interactivity Styles */
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
 
-            <div class="exp-item">
-                <span class="exp-meta">Mastercard • 2018 — 2022</span>
-                <h3 class="exp-title">Principal Software Engineer (Big Data)</h3>
-                <ul class="exp-list">
-                    <li>Developed the first version of Customer Data APIs using Event-Driven Microservices on Kafka[cite: 90].</li>
-                    <li>Orchestrated blue-green production deployments across data centers with zero downtime[cite: 96].</li>
-                </ul>
-            </div>
-        </section>
+    .tech-category {
+        padding: 2rem !important;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
 
-        <section id="foundation">
-            <div class="section-header">
-                <h2>Strategic Foundation</h2>
-                <p>Building <span>Global Excellence</span> (2004—2014)</p>
-            </div>
-            
-            <div class="exp-item">
-                <span class="exp-meta">Travelex • 2010 — 2014</span>
-                <h3 class="exp-title">Java/J2EE Consultant</h3>
-                <ul class="exp-list">
-                    <li>Developed card management functionalities and maintained high-quality code through rigorous review[cite: 133, 134].</li>
-                    <li>Managed build and deployment activities including branching, tagging, and patching strategies[cite: 137].</li>
-                </ul>
-            </div>
+    .tech-category:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent);
+        background: rgba(129, 140, 248, 0.08);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
 
-            <div class="exp-item">
-                <span class="exp-meta">Auropro Systems • 2007 — 2010</span>
-                <h3 class="exp-title">Java Software Engineer</h3>
-                <ul class="exp-list">
-                    <li>Built user provisioning APIs and multi-factor authentication modules using JAX-RPC SOA architecture.</li>
-                    <li>Managed fine-grained authorization using IBM Tivoli and LDAP services[cite: 148, 149].</li>
-                </ul>
-            </div>
+    .tech-icon {
+        font-size: 2rem;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+    }
 
-            <div class="exp-item">
-                <span class="exp-meta">HCL Technologies • 2004 — 2007</span>
-                <h3 class="exp-title">Member Technical Staff</h3>
-                <ul class="exp-list">
-                    <li>Developed and managed web applications for global clients using Java, J2EE, and Struts.</li>
-                </ul>
-            </div>
-        </section>
+    .tech-category h4 {
+        font-size: 1.2rem;
+        color: #fff;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.5rem;
+    }
 
-        <section id="technical">
-            <div class="section-header"><h2>Technical Arsenal</h2><p>Strategic <span>Stack</span></p></div>
-            <div class="glass-card">
-                <p style="color: var(--accent); font-weight: 800; margin-bottom: 1rem;">CLOUDS & SECURITY</p>
-                <p style="font-size: 0.9rem; color: var(--text-dim);">AWS (EKS, MSK, Lambda, CloudHSM), ForgeRock, Zero Trust, DevSecOps, PKI, IAM[cite: 18, 20, 36, 53].</p>
-            </div>
-        </section>
-    </main>
+    .tech-list {
+        list-style: none;
+    }
 
-    <script>
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth) * 100;
-            const y = (e.clientY / window.innerHeight) * 100;
-            document.getElementById('bg').style.setProperty('--x', x + '%');
-            document.getElementById('bg').style.setProperty('--y', y + '%');
-        });
+    .tech-list li {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
 
-        function toggleMenu() {
-            if (window.innerWidth <= 1024) {
-                document.getElementById('sidebar').classList.toggle('active');
-            }
+    .tech-list li::before {
+        content: '•';
+        color: var(--accent);
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .tech-grid {
+            grid-template-columns: 1fr;
         }
-    </script>
-</body>
-</html>
+        .tech-category {
+            padding: 1.5rem !important;
+        }
+    }
+</style>
