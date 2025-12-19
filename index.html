@@ -28,7 +28,6 @@
             line-height: 1.6;
         }
 
-        /* Ambient Background */
         .ambient-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -36,113 +35,99 @@
             z-index: -1;
         }
 
-        /* Sidebar Navigation */
         nav {
-            width: 300px;
+            width: 320px;
             height: 100vh;
             position: fixed;
             padding: 3rem 2rem;
             display: flex;
             flex-direction: column;
             border-right: 1px solid var(--border);
-            background: rgba(3, 7, 18, 0.8);
+            background: rgba(3, 7, 18, 0.9);
             backdrop-filter: blur(10px);
+            overflow-y: auto;
         }
 
-        .profile-img {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, var(--accent), #a855f7);
-            border-radius: 20px;
+        /* Passport Size Profile Styling */
+        .profile-container {
             margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .passport-photo {
+            width: 132px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 3px solid #ffffff;
+            outline: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, var(--accent), #a855f7);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 800;
+            color: white;
         }
 
-        nav h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.2rem; }
-        nav p { font-size: 0.85rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        nav h1 { font-size: 1.4rem; font-weight: 800; margin-top: 1rem; }
+        nav p { font-size: 0.8rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        .nav-links { margin-top: 3rem; list-style: none; }
-        .nav-links li { margin-bottom: 1rem; }
+        .nav-links { margin-top: 2rem; list-style: none; }
+        .nav-links li { margin-bottom: 0.8rem; }
         .nav-links a {
             text-decoration: none;
             color: var(--text-dim);
-            font-weight: 500;
+            font-size: 0.9rem;
             transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
-        .nav-links a.active::before {
-            content: '';
-            width: 20px;
-            height: 2px;
-            background: var(--accent);
-        }
+        .nav-links a:hover { color: var(--text-main); }
 
-        /* Main Content */
-        main {
-            margin-left: 300px;
-            padding: 4rem 10%;
-            width: 100%;
-        }
+        main { margin-left: 320px; padding: 4rem 8%; width: 100%; }
 
-        section { margin-bottom: 6rem; }
-
-        .hero h2 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 2rem; }
-        .hero h2 span { color: var(--accent); }
+        section { margin-bottom: 5rem; }
 
         .glass-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 2.5rem;
+            border-radius: 16px;
+            padding: 2rem;
             backdrop-filter: blur(16px);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Experience Timeline */
         .exp-item {
             position: relative;
-            padding-left: 30px;
+            padding-left: 25px;
             border-left: 1px solid var(--border);
-            padding-bottom: 3rem;
+            padding-bottom: 2.5rem;
         }
         .exp-item::before {
             content: '';
-            position: absolute;
-            left: -5px;
-            top: 0;
-            width: 9px;
-            height: 9px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
+            position: absolute; left: -5px; top: 5px;
+            width: 9px; height: 9px; background: var(--accent); border-radius: 50%;
         }
 
-        .exp-date { font-family: 'JetBrains Mono'; font-size: 0.85rem; color: var(--accent); }
-        .exp-title { font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0; }
-        .exp-company { color: var(--text-dim); margin-bottom: 1rem; font-weight: 600; }
+        .exp-date { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--accent); }
+        .exp-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
+        .exp-company { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 0.8rem; }
 
-        /* Skill Pills */
-        .skill-group { margin-bottom: 2rem; }
-        .skill-group h4 { margin-bottom: 1rem; color: var(--text-dim); font-size: 0.9rem; }
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-badge {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.85rem;
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .skill-tag {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
             font-family: 'JetBrains Mono';
+            margin: 2px;
+            display: inline-block;
         }
 
         @media (max-width: 900px) {
-            nav { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); }
+            nav { width: 100%; height: auto; position: relative; border-right: none; }
             main { margin-left: 0; padding: 2rem; }
             body { flex-direction: column; }
         }
@@ -152,175 +137,105 @@
     <div class="ambient-bg" id="bg"></div>
 
     <nav>
-<div class="profile-container">
-    <img src="profile.jpg" alt="Srinivasa Munnangi" class="passport-photo">
-    </div>
-
-<style>
-    .profile-container {
-        margin-bottom: 1.5rem;
-        display: flex;
-        justify-content: flex-start;
-    }
-    
-    .passport-photo {
-        /* Standard Passport Ratio (approx 1:1 to 1.2:1) */
-        width: 132px; /* ~35mm equivalent in web pixels */
-        height: 170px; /* ~45mm equivalent in web pixels */
-        
-        /* Modern styling */
-        object-fit: cover;
-        border-radius: 4px; /* Slight roundness for a professional look */
-        border: 3px solid #ffffff;
-        outline: 1px solid var(--border);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        
-        /* Font styling if using text instead of image */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.5rem; /* Large, bold font for initials */
-        font-weight: 800;
-        background: linear-gradient(135deg, var(--accent), var(--secondary));
-        color: white;
-        transition: transform 0.3s ease;
-    }
-
-    .passport-photo:hover {
-        transform: scale(1.02);
-        box-shadow: 0 0 15px var(--accent-glow);
-    }
-</style>
+        <div class="profile-container">
+            <div class="passport-photo">SM</div>
+        </div>
         <h1>Srinivasa Munnangi</h1>
         <p>Principal Software Engineer</p>
+        <p style="text-transform: none; color: var(--text-dim); margin-top: 5px;"><i class="fas fa-location-dot"></i> San Francisco, CA</p>
         
         <ul class="nav-links">
-            <li><a href="#about" class="active">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
+            <li><a href="#about">01. Professional Summary</a></li>
+            <li><a href="#experience">02. Experience</a></li>
+            <li><a href="#skills">03. Technical Stack</a></li>
+            <li><a href="#education">04. Education</a></li>
         </ul>
 
-        <div style="margin-top: auto; display: flex; gap: 15px; font-size: 1.2rem;">
+        <div style="margin-top: 2rem; display: flex; gap: 15px;">
             <a href="mailto:srinu.tdk@gmail.com" style="color: var(--text-dim);"><i class="fas fa-envelope"></i></a>
             <a href="https://github.com/SrinivasaRM" style="color: var(--text-dim);"><i class="fab fa-github"></i></a>
-            <a href="#" style="color: var(--text-dim);"><i class="fab fa-linkedin"></i></a>
         </div>
     </nav>
 
     <main>
-        <section id="about" class="hero">
-            <h2>Architecting <span>Resilient</span> & Secure Cloud Ecosystems.</h2>
+        <section id="about">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Professional Summary</h2>
             <div class="glass-card">
-                <p>Principal Software Engineer with over 18 years of experience across healthcare, e-commerce, and core payment processing[cite: 7]. Specialist in decomposing legacy monoliths into cloud-native, event-driven microservices with a focus on DevSecOps and zero-trust security[cite: 10, 42].</p>
+                <p>Over 18 years of experience delivering technical solutions within healthcare, e-commerce, financial services, and core payment processing domains. Specialist in building distributed applications, containerized microservices, and real-time data streaming platforms.</p>
+                <p style="margin-top: 1rem;">Currently driving the modernization of a 14-year-old enterprise platform at Mastercard, transitioning to decentralized, resilient architectural patterns and DevSecOps excellence.</p>
             </div>
         </section>
 
         <section id="experience">
-            <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Professional Experience</h3>
+            <h2 style="margin-bottom: 2rem;">Work Experience</h2>
             
             <div class="exp-item">
-                <span class="exp-date">JUNE 2022 — PRESENT</span>
-                <div class="exp-title">Principal Software Engineer (Security & Cloud)</div>
-                <div class="exp-company">MasterCard Priceless Platform</div>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Leading platform modernization using Java, React, and GraphQL while establishing multi-cloud connectivity between Kubernetes and AWS EKS[cite: 32, 35, 36].</p>
+                <span class="exp-date">2022 — PRESENT</span>
+                <div class="exp-title">Principal Software Engineer</div>
+                <div class="exp-company">MasterCard Priceless Platform | San Francisco, CA</div>
+                <ul style="margin-left: 1.2rem; color: var(--text-dim); font-size: 0.9rem;">
+                    <li>Leading platform modernization with cloud-native event-driven architecture using AWS EKS and Kafka.</li>
+                    <li>Implementing Zero Trust security practices and DevSecOps pipelines with GitLab and GitGuardian.</li>
+                    <li>Architecting multi-region CloudHSM and KMS solutions for PCI/PII data protection.</li>
+                </ul>
             </div>
 
             <div class="exp-item">
-                <span class="exp-date">APRIL 2018 — MAY 2022</span>
-                <div class="exp-title">Principal Software Engineer (Cloud Native & Big Data)</div>
-                <div class="exp-company">MasterCard Customer Data Management</div>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Built cloud-native event-driven microservices on Kafka and Spark Streaming to create a Single View of Customer[cite: 88, 90, 91].</p>
+                <span class="exp-date">2018 — 2022</span>
+                <div class="exp-title">Principal Software Engineer</div>
+                <div class="exp-company">MasterCard Customer Data Management | St. Louis, MO</div>
+                <ul style="margin-left: 1.2rem; color: var(--text-dim); font-size: 0.9rem;">
+                    <li>Built the first version of Customer Data APIs in a cloud-native event-driven fashion.</li>
+                    <li>Developed Spark Streaming applications and enterprise data pipelines for Single View of Customer.</li>
+                </ul>
             </div>
 
             <div class="exp-item">
-                <span class="exp-date">DEC 2016 — MARCH 2018</span>
+                <span class="exp-date">2016 — 2018</span>
                 <div class="exp-title">Solution Architect</div>
                 <div class="exp-company">MasterCard Global Processing Solutions</div>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Led large-scale enterprise migrations to 12-Factor cloud-native architectures[cite: 103, 106, 108].</p>
+                <ul style="margin-left: 1.2rem; color: var(--text-dim); font-size: 0.9rem;">
+                    <li>Enforced 12-Factor application development practices and TOGAF standards.</li>
+                    <li>Migrated large enterprise web architectures into modern single-page applications (React/Node).</li>
+                </ul>
             </div>
         </section>
 
         <section id="skills">
-            <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Technical Arsenal</h3>
-            
+            <h2 style="margin-bottom: 2rem;">Technical Stack</h2>
             <div class="glass-card">
-                <div class="skill-group">
-                    <h4>Cloud & Orchestration</h4>
-                    <div class="skills-container">
-                        <span class="skill-badge">AWS (EKS, MSK, S3)</span>
-                        <span class="skill-badge">Kubernetes</span>
-                        <span class="skill-badge">Docker</span>
-                        <span class="skill-badge">Terraform/CDK</span>
-                        <span class="skill-badge">Kafka</span>
+                <div class="skills-grid">
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Backend & Data</h4>
+                        <span class="skill-tag">Java/J2EE</span> <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Python</span> <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">Kafka</span> <span class="skill-tag">Spark</span>
                     </div>
-                </div>
-                
-                <div class="skill-group">
-                    <h4>Security & Identity</h4>
-                    <div class="skills-container">
-                        <span class="skill-badge">ForgeRock IAM</span>
-                        <span class="skill-badge">OAuth2/JWT/SAML</span>
-                        <span class="skill-badge">DevSecOps</span>
-                        <span class="skill-badge">Zero Trust</span>
-                        <span class="skill-badge">PKI</span>
-                    </div>
-                </div>
-
-                <div class="skill-group">
-                    <h4>Backend & Languages</h4>
-                    <div class="skills-container">
-                        <span class="skill-badge">Java/J2EE</span>
-                        <span class="skill-badge">Spring Boot</span>
-                        <span class="skill-badge">Node.js</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">GraphQL</span>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Cloud & Security</h4>
+                        <span class="skill-tag">AWS</span> <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">ForgeRock IAM</span> <span class="skill-tag">SAML/JWT</span>
+                        <span class="skill-tag">DevSecOps</span> <span class="skill-tag">Docker</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="education">
-            <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Education</h3>
+            <h2 style="margin-bottom: 2rem;">Education</h2>
             <div class="glass-card">
-                <div class="exp-title">M.S. in Computer Applications</div>
-                <div class="exp-company">Bharathidasan University, India [cite: 154, 155]</div>
+                <div class="exp-title">Master of Science (M.S.) in Computer Applications</div>
+                <div class="exp-company">Bharathidasan University, Tamil Nadu, India</div>
             </div>
         </section>
-
-        <footer style="color: var(--text-dim); font-size: 0.8rem; text-align: center; padding-top: 4rem; border-top: 1px solid var(--border);">
-            &copy; 2026 Srinivasa Munnangi. Built with a focus on resilient architecture.
-        </footer>
     </main>
 
     <script>
-        // Background movement effect
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
             document.getElementById('bg').style.setProperty('--x', x + '%');
             document.getElementById('bg').style.setProperty('--y', y + '%');
-        });
-
-        // Simple Intersection Observer for Nav Links
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
         });
     </script>
 </body>
