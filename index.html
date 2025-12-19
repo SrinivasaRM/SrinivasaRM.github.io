@@ -153,28 +153,42 @@
 
     <nav>
 <div class="profile-container">
-    <img src="profile.jpg" alt="Srinivasa Munnangi" class="profile-img-enhanced">
-</div>
+    <img src="profile.jpg" alt="Srinivasa Munnangi" class="passport-photo">
+    </div>
 
 <style>
     .profile-container {
         margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: flex-start;
     }
     
-    .profile-img-enhanced {
-        width: 100px;
-        height: 100px;
-        border-radius: 24px; /* Matches the card radius style */
+    .passport-photo {
+        /* Standard Passport Ratio (approx 1:1 to 1.2:1) */
+        width: 132px; /* ~35mm equivalent in web pixels */
+        height: 170px; /* ~45mm equivalent in web pixels */
+        
+        /* Modern styling */
         object-fit: cover;
-        border: 2px solid var(--accent);
-        padding: 4px;
-        background: var(--card-bg);
-        box-shadow: 0 0 20px var(--accent-glow);
+        border-radius: 4px; /* Slight roundness for a professional look */
+        border: 3px solid #ffffff;
+        outline: 1px solid var(--border);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        
+        /* Font styling if using text instead of image */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem; /* Large, bold font for initials */
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--accent), var(--secondary));
+        color: white;
         transition: transform 0.3s ease;
     }
 
-    .profile-img-enhanced:hover {
-        transform: scale(1.05) rotate(2deg);
+    .passport-photo:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 15px var(--accent-glow);
     }
 </style>
         <h1>Srinivasa Munnangi</h1>
