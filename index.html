@@ -29,7 +29,6 @@
             line-height: 1.6;
         }
 
-        /* Interactive Background */
         .ambient-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -37,7 +36,6 @@
             z-index: -1;
         }
 
-        /* Sidebar Navigation */
         nav {
             width: 320px;
             height: 100vh;
@@ -51,12 +49,11 @@
             z-index: 100;
         }
 
-        /* ELEGANT PROFILE PICTURE STYLING */
         .profile-wrapper {
             position: relative;
             margin-bottom: 2.5rem;
-            width: 160px; /* Slightly wider for elegance */
-            height: 210px; /* Golden ratio portrait */
+            width: 160px;
+            height: 210px;
         }
 
         .profile-glow {
@@ -89,15 +86,10 @@
             transition: transform 0.5s ease;
         }
 
-        /* Modern Hover Effects */
         .profile-wrapper:hover .profile-img-container {
             transform: translateY(-8px) rotateY(-5deg) rotateX(5deg);
             border-color: var(--accent);
             box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 20px var(--accent-glow);
-        }
-
-        .profile-wrapper:hover img {
-            transform: scale(1.08);
         }
 
         @keyframes pulse {
@@ -120,7 +112,6 @@
         }
         .nav-links a:hover { color: var(--accent); transform: translateX(5px); }
 
-        /* Main Content */
         main { margin-left: 320px; padding: 4rem 8%; width: calc(100% - 320px); }
 
         .glass-card {
@@ -149,6 +140,9 @@
         .exp-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin: 0.3rem 0; }
         .exp-company { font-size: 1rem; color: var(--text-dim); margin-bottom: 1rem; font-weight: 600; }
 
+        .skill-category h4 { color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; }
+        .skill-list { color: var(--text-dim); font-size: 0.85rem; }
+
         @media (max-width: 900px) {
             nav { width: 100%; height: auto; position: relative; border-right: none; }
             main { margin-left: 0; padding: 2rem; width: 100%; }
@@ -174,59 +168,66 @@
         
         <ul class="nav-links">
             <li><a href="#about">Summary</a></li>
-            <li><a href="#experience">Professional Journey</a></li>
-            <li><a href="#skills">Tech Stack</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Technical Arsenal</a></li>
             <li><a href="#education">Education</a></li>
         </ul>
 
         <div style="display: flex; gap: 20px; font-size: 1.2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <a href="mailto:srinu.tdk@gmail.com" style="color: var(--text-dim);"><i class="fas fa-envelope"></i></a>
-            <a href="https://github.com/SrinivasaRM" style="color: var(--text-dim);"><i class="fab fa-github"></i></a>
-            <a href="#" style="color: var(--text-dim);"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:srinu.tdk@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/SrinivasaRM" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
     </nav>
 
     <main>
         <section id="about">
-            <h2 style="font-size: 3rem; margin-bottom: 1.5rem; font-weight: 800;">Building Scalable <span style="color: var(--accent);">Cloud Platforms.</span></h2>
+            <h2 style="font-size: 3rem; margin-bottom: 1.5rem; font-weight: 800;">Modernizing <span style="color: var(--accent);">Enterprise Ecosystems.</span></h2>
             <div class="glass-card">
-                <p>Srini has over 18 years of professional experience delivering technical solutions within the healthcare, e-commerce, financial services and core payment processing domains[cite: 7]. Specialist in building distributed applications, containerized cloud-enabled microservices, and streaming real-time data[cite: 8].</p>
-                <p style="margin-top: 1.2rem;">Currently, he is focused on decomposing and decentralizing enterprise platforms using modern architectural patterns and driving operational stability across hybrid infrastructures at Mastercard[cite: 10].</p>
+                <p>Over 18 years of professional experience delivering high-impact technical solutions within healthcare, e-commerce, financial services, and core payment processing domains. Specialist in building distributed applications, containerized microservices, and real-time data streaming platforms.</p>
+                <p style="margin-top: 1.2rem;">Currently leading the decentralization of critical enterprise platforms at Mastercard using modern architectural patterns and DevSecOps principles to drive global operational stability.</p>
             </div>
         </section>
 
         <section id="experience">
-            <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Experience</h3>
+            <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Professional Journey</h3>
             
             <div class="exp-item">
-                <span class="exp-date">JUNE 2022 — PRESENT</span>
-                <div class="exp-title">Principal Software Engineer (Product Security & Cloud)</div>
-                <div class="exp-company">MasterCard Priceless Platform [cite: 31, 32]</div>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Leading modernization efforts using cloud-native event-driven architecture with Java, React, Node, and GraphQL[cite: 33, 34, 35]. Architecting AWS EKS, Kafka (MSK), and Envoy-based API Gateways for multi-cloud workloads[cite: 36].</p>
+                <span class="exp-date">2022 — PRESENT</span>
+                <div class="exp-title">Principal Software Engineer (Cloud & Security)</div>
+                <div class="exp-company">MasterCard Priceless Platform</div>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Leading cloud-native transformation using Java, GraphQL, and AWS EKS. Architected multi-region security infrastructure with AWS CloudHSM and established Zero-Trust security protocols across the platform.</p>
             </div>
 
             <div class="exp-item">
-                <span class="exp-date">APRIL 2018 — MAY 2022</span>
-                <div class="exp-title">Principal Software Engineer (Big Data Platforms)</div>
-                <div class="exp-company">MasterCard Customer Data Management [cite: 88]</div>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Successfully built Customer Data APIs in cloud-native event-driven styles using Spark Streaming and Kafka[cite: 90, 91].</p>
+                <span class="exp-date">2018 — 2022</span>
+                <div class="exp-title">Principal Software Engineer (Big Data)</div>
+                <div class="exp-company">MasterCard Customer Data Management</div>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Designed and built event-driven microservices on Kafka and Spark Streaming to support Single View of Customer initiatives across global data centers.</p>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-date">2016 — 2018</span>
+                <div class="exp-title">Solution Architect</div>
+                <div class="exp-company">MasterCard Global Processing Solutions</div>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Transitioned legacy web architectures to modern cloud-native standards (12-Factor App) and implemented highly scalable React/Node.js interfaces.</p>
             </div>
         </section>
 
         <section id="skills">
-            <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Expertise</h3>
-            <div class="glass-card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem;">
-                <div>
-                    <h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">CLOUD</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">AWS EKS/MSK, Kubernetes, Docker, Terraform[cite: 36, 46, 67, 68].</p>
+            <h3 style="margin-bottom: 2rem; font-size: 1.5rem;">Technical Arsenal</h3>
+            <div class="glass-card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                <div class="skill-category">
+                    <h4>Cloud & DevSecOps</h4>
+                    <p class="skill-list">AWS (EKS, MSK, CloudHSM), Kubernetes, Docker, Terraform, GitLab CI/CD.</p>
                 </div>
-                <div>
-                    <h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">SECURITY</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">ForgeRock IAM, OAuth2, JWT, Zero Trust, DevSecOps[cite: 20, 24, 38, 42].</p>
+                <div class="skill-category">
+                    <h4>Security & Identity</h4>
+                    <p class="skill-list">ForgeRock IAM, OAuth2, SAML, JWT, Zero Trust, PKI, Vault.</p>
                 </div>
-                <div>
-                    <h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem;">BACKEND</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">Java/J2EE, Spring Boot, Node.js, GraphQL, Python[cite: 13, 15, 35, 74].</p>
+                <div class="skill-category">
+                    <h4>Backend & Data</h4>
+                    <p class="skill-list">Java/J2EE, Spring Boot, Node.js, GraphQL, Python, Kafka, Spark.</p>
                 </div>
             </div>
         </section>
@@ -235,13 +236,12 @@
             <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Education</h3>
             <div class="glass-card">
                 <div class="exp-title">Master of Science (M.S.) in Computer Applications</div>
-                <div class="exp-company">Bharathidasan University, India [cite: 153, 154]</div>
+                <div class="exp-company">Bharathidasan University, India</div>
             </div>
         </section>
     </main>
 
     <script>
-        // Interactive Mouse Background
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
