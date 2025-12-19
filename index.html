@@ -13,7 +13,7 @@
             --accent-glow: rgba(129, 140, 248, 0.4);
             --bg: #020617;
             --sidebar-bg: rgba(2, 6, 23, 0.98);
-            --card-bg: rgba(30, 41, 59, 0.5);
+            --card-bg: rgba(30, 41, 59, 0.4);
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
@@ -36,94 +36,53 @@
             z-index: -1;
         }
 
-        /* Sidebar Navigation */
         nav {
-            width: 340px;
-            height: 100vh;
-            position: fixed;
-            padding: 4rem 2.5rem;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid var(--border);
-            background: var(--sidebar-bg);
-            backdrop-filter: blur(15px);
-            z-index: 100;
+            width: 340px; height: 100vh; position: fixed; padding: 4rem 2.5rem;
+            display: flex; flex-direction: column; border-right: 1px solid var(--border);
+            background: var(--sidebar-bg); backdrop-filter: blur(15px); z-index: 100;
         }
 
-        /* Executive Portrait Styling */
-        .profile-wrapper {
-            position: relative;
-            margin-bottom: 2.5rem;
-            width: 170px;
-            height: 220px;
-            align-self: flex-start;
-        }
-
+        .profile-wrapper { position: relative; margin-bottom: 2rem; width: 170px; height: 220px; }
         .profile-img-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 4px; /* Professional square-portrait look */
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
-            transition: all 0.6s ease;
+            width: 100%; height: 100%; border-radius: 4px; overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
         }
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); }
+        nav h1 { font-size: 1.5rem; font-weight: 800; margin-top: 1rem; }
+        nav p.job-title { font-size: 0.8rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
 
-        .profile-wrapper:hover .profile-img-container {
-            transform: scale(1.02);
-            filter: grayscale(0%);
-            border-color: var(--accent);
-        }
+        .nav-links { list-style: none; margin-top: 2rem; flex-grow: 1; }
+        .nav-links li { margin-bottom: 1rem; }
+        .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: #fff; transform: translateX(5px); display: inline-block; }
 
-        nav h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; margin-top: 1rem; }
-        nav p.job-title { font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; }
-
-        .nav-links { list-style: none; flex-grow: 1; }
-        .nav-links li { margin-bottom: 1.2rem; }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .nav-links a:hover { color: #fff; }
-
-        /* Content Area */
         main { margin-left: 340px; padding: 6rem 10%; width: calc(100% - 340px); }
 
         .section-header { margin-bottom: 3rem; }
-        .section-header h2 { font-size: 0.85rem; text-transform: uppercase; color: var(--accent); letter-spacing: 3px; margin-bottom: 1rem; }
-        .section-header p { font-size: 2.5rem; font-weight: 800; line-height: 1.2; color: #fff; }
+        .section-header h2 { font-size: 0.8rem; text-transform: uppercase; color: var(--accent); letter-spacing: 3px; margin-bottom: 0.5rem; }
+        .section-header p { font-size: 2.2rem; font-weight: 800; color: #fff; }
 
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-        }
+        .glass-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; margin-bottom: 2.5rem; }
 
-        .exec-summary { font-size: 1.15rem; color: var(--text-dim); margin-bottom: 2rem; }
+        /* Impact Grid */
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .impact-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; transition: 0.3s; }
+        .impact-card:hover { border-color: var(--accent); background: rgba(129, 140, 248, 0.05); }
+        .impact-icon { color: var(--accent); font-size: 1.5rem; margin-bottom: 1rem; }
+        .impact-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #fff; }
+        .impact-card p { font-size: 0.9rem; color: var(--text-dim); }
 
-        /* Experience Timeline */
-        .exp-item { margin-bottom: 4rem; position: relative; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; }
-        .exp-title { font-size: 1.4rem; font-weight: 700; color: #fff; }
-        .exp-meta { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--accent); }
-        .exp-bullets { list-style: none; color: var(--text-dim); }
-        .exp-bullets li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
-        .exp-bullets li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+        .exp-item { margin-bottom: 3rem; }
+        .exp-title { font-size: 1.3rem; font-weight: 700; color: #fff; }
+        .exp-meta { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--accent); display: block; margin-bottom: 1rem; }
+        .exp-list { list-style: none; color: var(--text-dim); font-size: 0.95rem; }
+        .exp-list li { margin-bottom: 0.6rem; padding-left: 1.2rem; position: relative; }
+        .exp-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
 
-        @media (max-width: 1100px) {
-            nav { width: 100%; height: auto; position: relative; border-right: none; padding: 2rem; }
-            main { margin-left: 0; padding: 3rem 1.5rem; width: 100%; }
+        @media (max-width: 1000px) {
+            nav { width: 100%; height: auto; position: relative; border-right: none; }
+            main { margin-left: 0; padding: 2rem; width: 100%; }
             body { flex-direction: column; }
         }
     </style>
@@ -141,13 +100,13 @@
         <p class="job-title">Principal Software Engineer</p>
         
         <ul class="nav-links">
-            <li><a href="#vision">Executive Vision</a></li>
-            <li><a href="#leadership">Leadership & Impact</a></li>
-            <li><a href="#technical">Technical Depth</a></li>
-            <li><a href="#education">Education</a></li>
+            <li><a href="#vision">Strategy</a></li>
+            <li><a href="#impact">Strategic Impact</a></li>
+            <li><a href="#experience">Professional Journey</a></li>
+            <li><a href="#technical">Technical Arsenal</a></li>
         </ul>
 
-        <div style="margin-top: auto; display: flex; gap: 20px; font-size: 1.3rem;">
+        <div style="margin-top: auto; display: flex; gap: 20px;">
             <a href="mailto:srinu.tdk@gmail.com" style="color: var(--text-dim);"><i class="fas fa-envelope"></i></a>
             <a href="https://github.com/SrinivasaRM" style="color: var(--text-dim);"><i class="fab fa-github"></i></a>
             <a href="#" style="color: var(--text-dim);"><i class="fab fa-linkedin"></i></a>
@@ -157,86 +116,91 @@
     <main>
         <section id="vision">
             <div class="section-header">
-                <h2>Vision & Strategy</h2>
-                <p>Engineering for <span>Long-Term Success</span> and Global Trust.</p>
+                <h2>Visionary Leadership</h2>
+                <p>Architecting for <span>Resilience</span> and Global Scale.</p>
             </div>
             <div class="glass-card">
-                <p class="exec-summary">
-                    With over 18 years of cross-functional leadership , I specialize in architecting resilient ecosystems that drive competitive advantage in payment processing and financial services. [cite: 7, 22] My philosophy centers on decomposing legacy complexity into decentralized, future-proof architectures  that sustain growth while maintaining uncompromising customer trust. 
+                <p style="font-size: 1.1rem; color: var(--text-main);">
+                    With over 18 years of technical leadership, I specialize in the transformation of enterprise platforms into decentralized, cloud-native ecosystems[cite: 7, 10]. My focus is on balancing competitive advantage with long-term architectural success, ensuring customer trust remains the cornerstone of innovation[cite: 9, 11].
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 2rem;">
-                    <div>
-                        <h4 style="color: #fff; margin-bottom: 0.5rem;">Strategic Growth</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-dim);">Leading digital transformation and DevSecOps to scale global platforms. [cite: 9]</p>
-                    </div>
-                    <div>
-                        <h4 style="color: #fff; margin-bottom: 0.5rem;">Operational Stability</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-dim);">Reinforcing platform resiliency across hybrid and multi-cloud infrastructures. [cite: 10, 36]</p>
-                    </div>
+            </div>
+        </section>
+
+        <section id="impact">
+            <div class="section-header">
+                <h2>Strategic Impact</h2>
+                <p>Driving <span>Business Outcomes</span> through Technology.</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Zero-Trust Security</h4>
+                    <p>Enforced shift-left and zero-trust practices across platforms to accomplish Cloud Native Application Protection (CNAPP)[cite: 42, 75].</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-infinity"></i></div>
+                    <h4>Zero-Downtime Reliability</h4>
+                    <p>Automated PROD deployments across data centers using blue-green strategies, achieving zero downtime for critical consumer services[cite: 96].</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-globe"></i></div>
+                    <h4>Global Resiliency</h4>
+                    <p>Designed and implemented multi-region AWS CloudHSM across US, EU, AP, and SA to meet global regulatory and security compliances.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Performance Optimization</h4>
+                    <p>Designed and developed serverless models and distributed load testing, identifying and closing critical resiliency gaps in the platform[cite: 48, 63, 64].</p>
                 </div>
             </div>
         </section>
 
-        <section id="leadership">
+        <section id="experience">
             <div class="section-header">
-                <h2>Leadership & Impact</h2>
-                <p>Driving Innovation Across <span>Global Teams.</span></p>
+                <h2>Experience</h2>
+                <p>A History of <span>Technical Excellence.</span></p>
             </div>
 
             <div class="exp-item">
-                <div class="exp-header">
-                    <h3 class="exp-title">Principal Software Engineer | Product Security & Cloud</h3>
-                    <span class="exp-meta">Mastercard • 2022 — Present</span>
-                </div>
-                <ul class="exp-bullets">
-                    <li>Directing the modernization of customer-facing enterprise platforms with Cloud Native Event Driven Architectures. [cite: 33, 34]</li>
-                    <li>Mentoring cross-functional development and operations teams on security guidance and zero-trust culture. [cite: 84, 85]</li>
-                    <li>Orchestrating multi-region CloudHSM and security compliance to protect PCI/PII data for millions of users. [cite: 53, 60]</li>
-                    <li>Optimizing operational excellence through automated CI/CD lifecycles and performance monitoring. [cite: 89, 101]</li>
+                <span class="exp-meta">MASTERCARD • 2022 — PRESENT</span>
+                <h3 class="exp-title">Principal Software Engineer (Security & Cloud Platforms)</h3>
+                <ul class="exp-list">
+                    <li>Leading the modernization of customer-facing enterprise platforms with Cloud Native Event Driven Architectures[cite: 33, 34].</li>
+                    <li>Architecting secure multi-cloud connectivity between on-prem Kubernetes and AWS EKS[cite: 36].</li>
+                    <li>Mentoring operations teams on vulnerability mitigation using Tenable.io, BlackDuck, and Nexus IQ[cite: 76, 77].</li>
                 </ul>
             </div>
 
             <div class="exp-item">
-                <div class="exp-header">
-                    <h3 class="exp-title">Solution Architect | Global Processing</h3>
-                    <span class="exp-meta">Mastercard • 2016 — 2018</span>
-                </div>
-                <ul class="exp-bullets">
-                    <li>Led technical migration initiatives for core web components, APIs, and IVR platforms. [cite: 105]</li>
-                    <li>Pioneered the transition to single-page applications and microservices using 12-Factor App guidelines. [cite: 108, 112, 113]</li>
-                    <li>Collaborated with global vendors and cross-functional teams to deliver scalable, high-availability products. [cite: 119]</li>
+                <span class="exp-meta">MASTERCARD • 2018 — 2022</span>
+                <h3 class="exp-title">Principal Software Engineer (Big Data Platforms)</h3>
+                <ul class="exp-list">
+                    <li>Successfully built the first version of Customer Data APIs in a cloud-native fashion on top of Kafka[cite: 90].</li>
+                    <li>Created Enterprise data pipelines connecting message buses, data lakes, and warehousing platforms[cite: 92].</li>
                 </ul>
             </div>
         </section>
 
         <section id="technical">
             <div class="section-header">
-                <h2>Technical Depth</h2>
-                <p>A Comprehensive <span>Technical Arsenal.</span></p>
+                <h2>Technical Arsenal</h2>
+                <p>Strategic <span>Tech Stack.</span></p>
             </div>
-            <div class="glass-card" style="padding: 2.5rem;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            <div class="glass-card">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
                     <div>
-                        <h4 style="color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Infrastructure & Cloud</h4>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">AWS EKS/MSK, Kubernetes, Docker, Envoy, Service Mesh, Terraform, CI/CD Pipelines. [cite: 36, 41, 67, 68]</p>
+                        <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem;">PLATFORMS</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">AWS (EKS, MSK, Lambda, S3), Kubernetes, Docker, Envoy, Kafka[cite: 36, 47, 48].</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Security & Compliance</h4>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">ForgeRock IAM, Zero Trust, PKI, OAuth2/JWT, SAML, PCI DSS, DevSecOps. [cite: 20, 38, 40, 42, 71]</p>
+                        <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem;">SECURITY</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">ForgeRock IAM, OAuth2, JWT, SAML, Zero Trust, CloudHSM, DevSecOps[cite: 38, 40, 42, 53].</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Development & Data</h4>
-                        <p style="color: var(--text-dim); font-size: 0.9rem;">Java/J2EE, Spring Boot, GraphQL, Python, Kafka, Spark Streaming, React, Node.js. [cite: 13, 15, 35, 90, 91]</p>
+                        <h4 style="color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem;">BACKEND</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Java/J2EE, Spring Boot, GraphQL, Node.js, Python, Spark Streaming[cite: 35, 91].</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Education</h3>
-            <div class="glass-card" style="padding: 2rem;">
-                <h4 style="font-size: 1.1rem; color: #fff;">Master of Science (M.S.) in Computer Applications</h4>
-                <p style="color: var(--text-dim);">Bharathidasan University, India [cite: 154, 155]</p>
             </div>
         </section>
     </main>
