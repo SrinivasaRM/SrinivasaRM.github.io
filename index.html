@@ -69,25 +69,7 @@
         .nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; font-weight: 600; transition: 0.3s; display: flex; align-items: center; }
         .nav-links a:hover { color: #fff; transform: translateX(5px); }
 
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent);
-            color: #fff;
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(129, 140, 248, 0.3);
-        }
-        .btn-download:hover { transform: translateY(-2px); background: #6366f1; }
-        .btn-download i { margin-right: 10px; }
-
-        .social-links { display: flex; gap: 20px; border-top: 1px solid var(--border); pt: 1.5rem; }
+        .social-links { display: flex; gap: 20px; border-top: 1px solid var(--border); padding-top: 1.5rem; }
         .social-links a { color: var(--text-dim); font-size: 1.2rem; transition: 0.3s; margin-top: 1.5rem; }
         .social-links a:hover { color: var(--accent); }
 
@@ -107,6 +89,32 @@
             margin-bottom: 2.5rem; 
             backdrop-filter: blur(10px);
         }
+
+        /* Architecture Visual */
+        .arch-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+            background: #000;
+        }
+        .arch-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .arch-container:hover img {
+            transform: scale(1.02);
+        }
+
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .impact-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; transition: 0.3s; }
+        .impact-card:hover { border-color: var(--accent); background: rgba(129, 140, 248, 0.05); }
+        .impact-icon { color: var(--accent); font-size: 1.5rem; margin-bottom: 1rem; }
+        .impact-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #fff; }
+        .impact-card p { font-size: 0.9rem; color: var(--text-dim); }
 
         /* Timeline Styles */
         .timeline { position: relative; max-width: 100%; margin: 0 auto; padding-left: 2rem; }
@@ -177,10 +185,6 @@
         </div>
         <h1>Srinivasa R Munnangi</h1>
         <p class="job-title">Principal Software Engineer</p>
-        
-        <!-- <a href="resume.pdf" class="btn-download" target="_blank">
-            <i class="fas fa-cloud-arrow-down"></i> Download Resume
-        </a> -->
 
         <ul class="nav-links">
             <li><a href="#vision"><i class="fas fa-eye" style="margin-right: 12px; width: 15px;"></i> Executive Vision</a></li>
@@ -214,6 +218,11 @@
                 <h2>Strategic Impact</h2>
                 <p>Driving <span>Business Outcomes</span> through Innovation.</p>
             </div>
+
+            <div class="arch-container">
+                <img src="architecture-diagram.png" alt="Multi-Region Security Architecture Diagram">
+            </div>
+
             <div class="impact-grid">
                 <div class="impact-card">
                     <div class="impact-icon"><i class="fas fa-shield-check"></i></div>
@@ -317,7 +326,6 @@
     </main>
 
     <script>
-        // Ambient background effect
         const updateGlow = (e) => {
             const x = ((e.clientX || e.touches[0].clientX) / window.innerWidth) * 100;
             const y = ((e.clientY || e.touches[0].clientY) / window.innerHeight) * 100;
@@ -327,7 +335,6 @@
         document.addEventListener('mousemove', updateGlow);
         document.addEventListener('touchmove', updateGlow);
 
-        // Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
         menuToggle.addEventListener('click', () => {
@@ -337,7 +344,6 @@
             icon.classList.toggle('fa-times');
         });
 
-        // Close sidebar on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 if(window.innerWidth <= 1024) sidebar.classList.remove('active');
